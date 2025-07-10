@@ -56,3 +56,5 @@ systemctl --user start rclone-mount
 wget https://app.warp.dev/get_warp?package=pacman&channel=preview
 cd ~/Downloads
 sudo pacman -U ./warp-terminal*
+
+# apparmor. Edit /boot/limine.conf  and 

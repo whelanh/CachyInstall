@@ -113,6 +113,32 @@ sudo bash -c 'echo -e "write-cache\nOptimize=compress-fast" > /etc/apparmor/pars
 
 # if system can do rtcwake, cp ~/OneDrive/rtc-suspend.sh to ~/bin/  and copy ~/OneDrive/evening & morning to
 # ~/.config/systemctl/user and enable, start etc.
+echo "virt manager"
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+
+sudo pacman -S qemu-full virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode iptables libguestfs edk2-ovmf swtpm
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+
+
+echo "Set the UNIX domain socket group ownership to libvirt, (around line 85)"
+echo "unix_sock_group = 'libvirt'"
+echo "Set the UNIX socket permissions for the R/W socket (around line 102)"
+echo "unix_sock_rw_perms = '0770'"
+echo "sudo micro /etc/libvirt/libvirtd.conf"
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+sudo usermod -a -G libvirt $(whoami)
+newgrp libvirt
+sudo systemctl restart libvirtd.service
+sudo virsh net-autostart default 
 
 echo "systemd timers"
 

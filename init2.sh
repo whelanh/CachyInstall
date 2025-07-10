@@ -51,8 +51,6 @@ cd ~/OneDrive/multipleChessPy/pyth*
 chmod +x *.sh
 chmod +x pgn-ex*
 
-
-
 echo "Initiate Tailscale"
 sudo systemctl enable --now tailscaled
 sudo tailscale up --ssh

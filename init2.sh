@@ -42,6 +42,13 @@ cp ~/OneDrive/makeSF.sh .
 chmod +x ./makeSF.sh
 ./makeSF.sh
 
+cp ~/OneDrive/updateStockfish.sh ~/
+chmod +x ~/updateStockfish.sh
+
+cd ~/OneDrive/multipleChess/pyth*
+chmod +x *.sh
+chmod +x pgn-ex*
+
 echo "Initiate Tailscale"
 sudo systemctl enable --now tailscaled
 sudo tailscale up --ssh

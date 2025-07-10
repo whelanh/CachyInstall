@@ -82,3 +82,15 @@ echo "write-cache"
 echo "Optimize=compress-fast"
 
 echo "Then save the file and reboot"
+
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+
+echo "systemd timers"
+
+cd ~/.config/systemd/user
+cp ~/OneDrive/schedule-* .

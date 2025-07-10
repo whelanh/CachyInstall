@@ -60,27 +60,6 @@ wget https://app.warp.dev/get_warp?package=pacman&channel=preview
 cd ~/Downloads
 sudo pacman -U ./warp-terminal*
 
-echo "apparmor"
-echo "Edit /boot/limine.conf  and /etc/default/limine"
-echo "add  lsm=landlock,lockdown,yama,integrity,apparmor,bpf after splash"
-
-read -p "Do you want to proceed with the updates? (y/N): " answer
-
-if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
-    echo "Update canceled."
-    exit 0
-fi
-
-sudo pacman -S apparmor apparmor.d-git
-systemctl enable --now apparmor.service
-
-echo "edit /etc/apparmor/parser.conf"
-echo "Add the following lines:"
-echo "write-cache"
-echo "Optimize=compress-fast"
-
-echo "Then save the file and reboot"
-
 read -p "Do you want to proceed with the updates? (y/N): " answer
 
 if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
@@ -110,3 +89,24 @@ systemctl --user start schedule-test.timer
 systemctl --user start schedule-test-two.timer
 systemctl --user start schedule-stockfish.timer
 systemctl --user status schedule-test 
+
+echo "apparmor"
+echo "Edit /boot/limine.conf  and /etc/default/limine"
+echo "add  lsm=landlock,lockdown,yama,integrity,apparmor,bpf after splash"
+
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+
+sudo pacman -S apparmor apparmor.d-git
+systemctl enable --now apparmor.service
+
+echo "edit /etc/apparmor/parser.conf"
+echo "Add the following lines:"
+echo "write-cache"
+echo "Optimize=compress-fast"
+
+echo "Then save the file and reboot"

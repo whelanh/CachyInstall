@@ -1,5 +1,4 @@
 bat
-base-devel
 bc
 chezmoi
 duf

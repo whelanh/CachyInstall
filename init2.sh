@@ -18,7 +18,7 @@ chezmoi init --apply https://github.com/whelanh/dotfiles.git
 # Install Python chess module
 pip install chess --break-system-packages
 
-# Install Brew.  Used for OneDrive integration (could also do Tailscale that way)
+echo "Install Brew.  Used for OneDrive integration (could also do Tailscale that way)"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo >> /home/hugh/.config/fish/config.fish
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/hugh/.config/fish/config.fish
@@ -27,23 +27,26 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install onedrive
 brew services start onedrive-cli
 onedrive --force --skip-dot-files --skip-dir venv --sync
+
 read -p "You should start OneDrive now. Do you want to proceed with the updates? (y/N): " answer
 
 if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
     echo "Update canceled."
     exit 0
 fi
-# Install Stockfish chess engine
+
+echo "Install Stockfish chess engine"
 cd ~/Downloads
 git clone --recurse-submodules https://github.com/official-stockfish/Stockfish.git
 cp ~/OneDrive/makeSF.sh .
 chmod +x ./makeSF.sh
 ./makeSF.sh
 
-# Initiate Tailscale
+echo "Initiate Tailscale"
 sudo systemctl enable --now tailscaled
 sudo tailscale up --ssh
 
+echo "rclone google drive"
 rclone config
 
 mkdir ~/GoogleDrive
@@ -52,10 +55,30 @@ cp ~/OneDrive/rclone-mount.service .
 systemctl --user enable --now rclone-mount.service
 systemctl --user start rclone-mount
 
-# Warp
+echo "Warp"
 wget https://app.warp.dev/get_warp?package=pacman&channel=preview
 cd ~/Downloads
 sudo pacman -U ./warp-terminal*
 
-# apparmor. Edit /boot/limine.conf  and /etc/default/limine
-# add  after splash
+echo "apparmor"
+echo "Edit /boot/limine.conf  and /etc/default/limine"
+echo "add  lsm=landlock,lockdown,yama,integrity,apparmor,bpf after splash"
+
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+
+sudo pacman -S apparmor apparmor.d-git
+systemctl enable --now apparmor.service
+
+
+
+echo "edit /etc/apparmor/parser.conf"
+echo "Add the following lines:"
+echo "write-cache"
+echo "Optimize=compress-fast"
+
+echo "Then save the file and reboot"

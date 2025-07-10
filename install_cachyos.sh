@@ -121,7 +121,7 @@ if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
     exit 0
 fi
 
-sudo pacman -S qemu-full virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode iptables libguestfs edk2-ovmf swtpm
+sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat dmidecode libguestfs edk2-ovmf swtpm
 sudo systemctl enable libvirtd.service
 sudo systemctl start libvirtd.service
 

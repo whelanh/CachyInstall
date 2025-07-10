@@ -133,4 +133,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #gnome-extensions install forge@jmmaranan.com 
 #gnome-extensions install appindicatorsupport@rgcjonas.gmail.com 
 #gnome-extensions install tailscale@joaophi.github.com 
-#gnome-extensions install blur-my-shell@aunetx
+#gnome-extensions install blur-my-shell@aunetx  search-light@icedman.github.com logomenu@aryan_k gsconnect@andyholmes.github.io dash-to-dock@micxgx.gmail.com

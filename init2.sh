@@ -44,9 +44,6 @@ chmod +x ./makeSF.sh
 sudo systemctl enable --now tailscaled
 sudo tailscale up --ssh
 
-# Download Appimage for Warp terminal, chmod + x, add ~/distrobox-arch/OneDrive/warp.desktop to ~/local/share/applications...may need to make directory
-# update-desktop-database ~/.local/share/applications
-
 rclone config
 
 mkdir ~/GoogleDrive

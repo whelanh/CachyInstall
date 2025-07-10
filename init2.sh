@@ -8,7 +8,7 @@ makepkg -si
 cd ../CachyInstall
 yay -S --needed --noconfirm  - < archpkgs.txt 
 
-flatpak install com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal
+flatpak install com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager
 
 chezmoi init --apply https://github.com/whelanh/dotfiles.git
 

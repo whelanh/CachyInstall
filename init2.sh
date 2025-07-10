@@ -130,4 +130,7 @@ sudo bash -c 'echo -e "write-cache\nOptimize=compress-fast" > /etc/apparmor/pars
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-gnome-extensions install forge@jmmaranan.com appindicatorsupport@rgcjonas.gmail.com tailscale@joaophi.github.com blur-my-shell@aunetx
+gnome-extensions install forge@jmmaranan.com 
+gnome-extensions install appindicatorsupport@rgcjonas.gmail.com 
+gnome-extensions install tailscale@joaophi.github.com 
+gnome-extensions install blur-my-shell@aunetx

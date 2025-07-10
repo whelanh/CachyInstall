@@ -65,8 +65,8 @@ systemctl --user enable --now rclone-mount.service
 systemctl --user start rclone-mount
 
 echo "Warp"
-wget https://app.warp.dev/get_warp?package=pacman&channel=preview
 cd ~/Downloads
+wget https://app.warp.dev/get_warp?package=pacman&channel=preview
 sudo pacman -U ./warp-terminal*
 
 read -p "Do you want to proceed with the updates? (y/N): " answer

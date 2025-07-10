@@ -1,4 +1,4 @@
-#!/bin/bash
+7#!/bin/bash
 
 sudo pacman -S --needed base-devel git 
 cd ~/Downloads
@@ -110,3 +110,6 @@ echo "write-cache"
 echo "Optimize=compress-fast"
 
 echo "Then save the file and reboot"
+
+sudo bash -c 'echo -e "write-cache\nOptimize=compress-fast" > /etc/apparmor/parser.conf'
+

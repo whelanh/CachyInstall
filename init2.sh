@@ -66,7 +66,13 @@ systemctl --user start rclone-mount
 
 echo "Warp"
 cd ~/Downloads
-wget https://app.warp.dev/get_warp?package=pacman&channel=preview
+echo "wget https://app.warp.dev/get_warp?package=pacman&channel=preview"
+read -p "You should start OneDrive now. Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
 sudo pacman -U ./warp-terminal*
 
 read -p "Do you want to proceed with the updates? (y/N): " answer

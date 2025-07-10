@@ -57,4 +57,5 @@ wget https://app.warp.dev/get_warp?package=pacman&channel=preview
 cd ~/Downloads
 sudo pacman -U ./warp-terminal*
 
-# apparmor. Edit /boot/limine.conf  and 
+# apparmor. Edit /boot/limine.conf  and /etc/default/limine
+# add  after splash

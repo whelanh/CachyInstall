@@ -74,8 +74,6 @@ fi
 sudo pacman -S apparmor apparmor.d-git
 systemctl enable --now apparmor.service
 
-
-
 echo "edit /etc/apparmor/parser.conf"
 echo "Add the following lines:"
 echo "write-cache"
@@ -93,4 +91,22 @@ fi
 echo "systemd timers"
 
 cd ~/.config/systemd/user
-cp ~/OneDrive/schedule-* .
+cp ~/OneDrive/schedule-* 
+
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+
+systemctl --user enable schedule-test.service
+systemctl --user enable schedule-stockfish.service 
+ 
+systemctl --user enable schedule-test.timer
+systemctl --user enable schedule-test-two.timer
+systemctl --user enable schedule-stockfish.timer
+systemctl --user start schedule-test.timer
+systemctl --user start schedule-test-two.timer
+systemctl --user start schedule-stockfish.timer
+systemctl --user status schedule-test 

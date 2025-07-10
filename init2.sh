@@ -134,3 +134,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #gnome-extensions install appindicatorsupport@rgcjonas.gmail.com 
 #gnome-extensions install tailscale@joaophi.github.com 
 #gnome-extensions install blur-my-shell@aunetx  search-light@icedman.github.com logomenu@aryan_k gsconnect@andyholmes.github.io dash-to-dock@micxgx.gmail.com
+# if system can do rtcwake, cp ~/OneDrive/rtc-suspend.sh to ~/bin/  and copy ~/OneDrive/evening & morning to ~/.config/systemctl/user and enable, start etc.

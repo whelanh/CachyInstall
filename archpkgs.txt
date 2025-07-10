@@ -11,9 +11,11 @@ github-desktop-bin
 gnome-weather
 gnome-clocks
 gnome-tweaks
+htop
 kmymoney
 lftp
 micro
+power-profiles-daemon
 python-colorama
 python-numpy
 python-pandas

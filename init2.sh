@@ -5,7 +5,7 @@ cd ~/Downloads
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-cd ..
+cd ../CachyInstall
 yay -S --needed --noconfirm  - < archpkgs.txt 
 
 flatpak install com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal

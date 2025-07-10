@@ -123,3 +123,5 @@ echo "Then save the file and reboot"
 sudo bash -c 'echo -e "write-cache\nOptimize=compress-fast" > /etc/apparmor/parser.conf'
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+gnome-extensions install forge@jmmaranan.com appindicatorsupport@rgcjonas.gmail.com tailscale@joaophi.github.com blur-my-shell@aunetx

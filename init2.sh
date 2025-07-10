@@ -8,7 +8,7 @@ makepkg -si
 cd ..
 yay -S --needed --noconfirm  - < archpkgs.txt 
 
-flatpak install com.visualstudio.code com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal
+flatpak install com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal
 
 chezmoi init --apply https://github.com/whelanh/dotfiles.git
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 sudo pacman -S --needed base-devel git 
 cd ~/Downloads
 git clone https://aur.archlinux.org/yay.git
@@ -75,36 +78,6 @@ if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
 fi
 sudo pacman -U ./warp-terminal*
 
-read -p "Do you want to proceed with the updates? (y/N): " answer
-
-if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
-    echo "Update canceled."
-    exit 0
-fi
-
-echo "systemd timers"
-
-cd ~/.config/systemd/user
-cp ~/OneDrive/schedule-* 
-
-read -p "Do you want to proceed with the updates? (y/N): " answer
-
-if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
-    echo "Update canceled."
-    exit 0
-fi
-
-systemctl --user enable schedule-test.service
-systemctl --user enable schedule-stockfish.service 
- 
-systemctl --user enable schedule-test.timer
-systemctl --user enable schedule-test-two.timer
-systemctl --user enable schedule-stockfish.timer
-systemctl --user start schedule-test.timer
-systemctl --user start schedule-test-two.timer
-systemctl --user start schedule-stockfish.timer
-systemctl --user status schedule-test 
-
 echo "apparmor"
 echo "Edit /boot/limine.conf  and /etc/default/limine"
 echo "add  lsm=landlock,lockdown,yama,integrity,apparmor,bpf after splash"
@@ -128,7 +101,6 @@ echo "Then save the file and reboot"
 
 sudo bash -c 'echo -e "write-cache\nOptimize=compress-fast" > /etc/apparmor/parser.conf'
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #forge@jmmaranan.com 
 #appindicatorsupport@rgcjonas.gmail.com 
@@ -139,4 +111,40 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #gsconnect@andyholmes.github.io 
 #dash-to-dock@micxgx.gmail.com
 
-# if system can do rtcwake, cp ~/OneDrive/rtc-suspend.sh to ~/bin/  and copy ~/OneDrive/evening & morning to ~/.config/systemctl/user and enable, start etc.
+# if system can do rtcwake, cp ~/OneDrive/rtc-suspend.sh to ~/bin/  and copy ~/OneDrive/evening & morning to
+# ~/.config/systemctl/user and enable, start etc.
+
+echo "systemd timers"
+
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+cd ~/.config/systemd/user
+cp ~/OneDrive/schedule-* 
+
+systemctl --user enable schedule-test.service
+systemctl --user enable schedule-stockfish.service 
+ 
+systemctl --user enable schedule-test.timer
+systemctl --user enable schedule-test-two.timer
+systemctl --user enable schedule-stockfish.timer
+systemctl --user start schedule-test.timer
+systemctl --user start schedule-test-two.timer
+systemctl --user start schedule-stockfish.timer
+systemctl --user status schedule-test 
+
+echo "openrgb"
+
+read -p "Do you want to proceed with the updates? (y/N): " answer
+
+if [[ "$answer" =~ ^[Nn]$ || -z "$answer" ]]; then
+    echo "Update canceled."
+    exit 0
+fi
+
+yay -S openrgb i2c-tools
+sudo bash -c 'echo -e "i2c_dev" > /etc/modules-load.d/i2c-dev.conf'
+sudo openrgb

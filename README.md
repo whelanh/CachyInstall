@@ -1,6 +1,6 @@
 # CachyOS Enhanced Setup Script
 
-This repository contains an interactive shell script to help you set up and customize your CachyOS installation with optional components and manual intervention points. This set-up reflects my personal set-up. Once you've cloned (or forked) this repo, you can adjust for your preferences.
+This repository contains an interactive shell script to help you set up and customize your CachyOS installation with optional components and manual intervention points. This set-up reflects my personal set-up. Once you've cloned (or forked) this repo, you can adjust for your preferences. **In particular, anything in the install script that is downloading from ~/OneDrive will need to be changed or deleted by you.**
 
 ## Features
 

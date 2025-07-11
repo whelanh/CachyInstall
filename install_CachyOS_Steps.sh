@@ -254,8 +254,6 @@ fi
 # 14. AppArmor Security
 print_section "AppArmor Security"
 if ask_yes_no "Install and configure AppArmor?"; then
-    print_status "Installing AppArmor..."
-    sudo pacman -S apparmor apparmor.d-git
     
     pause_for_manual "Please edit the boot configuration:
 1. Edit /boot/limine.conf
@@ -263,6 +261,8 @@ if ask_yes_no "Install and configure AppArmor?"; then
 3. Add 'lsm=landlock,lockdown,yama,integrity,apparmor,bpf' after 'splash' in the kernel parameters
 4. Save the files"
     
+    print_status "Installing AppArmor..."
+    sudo pacman -S apparmor apparmor.d-git
     print_status "Configuring AppArmor..."
     sudo systemctl enable --now apparmor.service
     
@@ -331,7 +331,7 @@ if ask_yes_no "Install OpenRGB for RGB lighting control?"; then
     sudo bash -c 'echo -e "i2c_dev" > /etc/modules-load.d/i2c-dev.conf'
     
     print_status "OpenRGB installed"
-    print_warning "You may need to run 'sudo openrgb' first time to detect devices"
+    print_warning "You may need to reboot and run 'sudo openrgb' first time to detect devices"
 fi
 
 # Final Summary

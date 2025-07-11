@@ -29,8 +29,11 @@ echo "Install Brew.  Used for OneDrive integration (could also do Tailscale that
 echo >> /home/hugh/.config/fish/config.fish
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/hugh/.config/fish/config.fish
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo >> /home/hugh/.zshrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/hugh/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-brew install onedrive
+brew install onedrive-cli
 brew services start onedrive-cli
 onedrive --force --skip-dot-files --skip-dir venv --sync
 

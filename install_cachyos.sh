@@ -104,18 +104,13 @@ echo "Then save the file and reboot"
 
 sudo bash -c 'echo -e "write-cache\nOptimize=compress-fast" > /etc/apparmor/parser.conf'
 
+echo "gnome extensions:"
+echo "    tailscale@joaophi.github.com" 
+echo "    search-light@icedman.github.com" 
+echo "    gsconnect@andyholmes.github.io" 
 
-#forge@jmmaranan.com 
-#appindicatorsupport@rgcjonas.gmail.com 
-#tailscale@joaophi.github.com 
-#blur-my-shell@aunetx  
-#search-light@icedman.github.com 
-#logomenu@aryan_k 
-#gsconnect@andyholmes.github.io 
-#dash-to-dock@micxgx.gmail.com
-
-# if system can do rtcwake, cp ~/OneDrive/rtc-suspend.sh to ~/bin/  and copy ~/OneDrive/evening & morning to
-# ~/.config/systemctl/user and enable, start etc.
+echo "if system can do rtcwake, cp ~/OneDrive/rtc-suspend.sh to ~/bin/  and copy ~/OneDrive/evening & morning to"
+echo "    ~/.config/systemctl/user and enable, start etc."
 echo "virt manager"
 read -p "Do you want to proceed with the updates? (y/N): " answer
 

@@ -227,7 +227,7 @@ if ask_yes_no "Setup rclone for Google Drive?"; then
         systemctl --user start rclone-mount
         print_status "rclone Google Drive setup completed"
     else
-        print_warning "rclone-mount.service not found in OneDrive"
+        print_warning "rclone-mount.service not found"
     fi
 fi
 

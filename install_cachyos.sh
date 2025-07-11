@@ -140,6 +140,7 @@ newgrp libvirt
 sudo systemctl restart libvirtd.service
 sudo virsh net-autostart default 
 
+echo "enable rdp"
 echo "systemd timers"
 
 read -p "Do you want to proceed with the updates? (y/N): " answer

@@ -9,6 +9,11 @@ gcc-fortran
 github-desktop-bin
 gnome-weather
 gnome-clocks
+gnome-shell-extension-appindicator
+gnome-shell-extension-blur-my-shell
+gnome-shell-extension-dash-to-dock 
+gnome-shell-extension-forge 
+gnome-shell-extension-logo-menu 
 gnome-tweaks
 htop
 kmymoney

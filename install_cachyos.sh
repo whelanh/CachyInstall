@@ -1,6 +1,9 @@
 #!/bin/bash
 
-#Oh-my-zsh
+echo "allow fractional scaling"
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+echo "Oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo pacman -S --needed base-devel git 

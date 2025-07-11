@@ -221,8 +221,8 @@ if ask_yes_no "Setup rclone for Google Drive?"; then
     mkdir -p ~/GoogleDrive
     mkdir -p ~/.config/systemd/user/
     
-    if [[ -f "~/OneDrive/rclone-mount.service" ]]; then
-        cp ~/OneDrive/rclone-mount.service ~/.config/systemd/user/
+    if [[ -f "./rclone-mount.service" ]]; then
+        cp ./rclone-mount.service ~/.config/systemd/user/
         systemctl --user enable --now rclone-mount.service
         systemctl --user start rclone-mount
         print_status "rclone Google Drive setup completed"

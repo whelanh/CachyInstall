@@ -60,6 +60,9 @@ cd ~/OneDrive/multipleChessPy/pyth*
 chmod +x *.sh
 chmod +x pgn-ex*
 
+echo "fastfetch config"
+cp ~/OneDrive/configFORfastfetchARCH.jsonc ~/.config/fastfetch/config.jsonc
+
 echo "Initiate Tailscale"
 sudo systemctl enable --now tailscaled
 sudo tailscale up --ssh

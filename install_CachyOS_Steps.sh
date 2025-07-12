@@ -195,6 +195,7 @@ print_section "Fastfetch Configuration"
 if ask_yes_no "Configure fastfetch?"; then
     if [[ -f "~/OneDrive/configFORfastfetchARCH.jsonc" ]]; then
         print_status "Copying fastfetch config..."
+        fastfetch --gen-config
         mkdir -p ~/.config/fastfetch
         cp ~/OneDrive/configFORfastfetchARCH.jsonc ~/.config/fastfetch/config.jsonc
         print_status "Fastfetch configured"

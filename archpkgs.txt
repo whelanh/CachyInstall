@@ -16,7 +16,6 @@ gnome-shell-extension-forge
 gnome-shell-extension-logo-menu 
 gnome-tweaks
 htop
-kmymoney
 lftp
 micro
 power-profiles-daemon

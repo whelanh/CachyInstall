@@ -69,22 +69,6 @@ print_section "CachyOS Enhanced Setup Script"
 echo "This script will guide you through setting up your CachyOS system."
 echo "You can choose which components to install and skip sections as needed."
 
-# 1. GNOME Fractional Scaling
-print_section "GNOME Fractional Scaling"
-if ask_yes_no "Enable fractional scaling for GNOME?"; then
-    print_status "Enabling fractional scaling..."
-    gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
-    print_status "Fractional scaling enabled"
-fi
-
-# 2. Oh-my-zsh Installation
-print_section "Oh-my-zsh Installation"
-if ask_yes_no "Install Oh-my-zsh?"; then
-    print_status "Installing Oh-my-zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
-    print_status "Oh-my-zsh installation completed"
-fi
-
 # 3. AUR Helper (yay) Installation
 print_section "AUR Helper (yay) Installation"
 if ask_yes_no "Install yay AUR helper?"; then
@@ -116,7 +100,7 @@ fi
 print_section "Flatpak Applications"
 if ask_yes_no "Install Flatpak applications?"; then
     print_status "Installing Flatpak applications..."
-    flatpak install -y org.kde.kmymoney com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager
+    flatpak install -y be.alexandervanhee.gradia com.github.xournalpp.xournalpp org.kde.kmymoney com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager
     print_status "Flatpak applications installed"
 fi
 

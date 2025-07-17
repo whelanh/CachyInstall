@@ -22,14 +22,14 @@ cd ~/Downloads/CachyInstall
 
 ### 2. Run the Setup Script
 
-Make sure you are **not** running as root. Start the script:
+Make sure you are **not** running as root. Start the script process with step1:
 
 ```bash
 chmod +x install_CachyOS_Steps.sh
-bash install_CachyOS_Steps.sh
+bash install_CachyOS_step1.sh
 ```
 
-The script will guide you through each step, asking for confirmation before installing or configuring each component.
+Follow up with step2 and step3. The scripts will guide you through each step, asking for confirmation before installing or configuring each component.
 
 ## Notes
 
@@ -39,7 +39,7 @@ The script will guide you through each step, asking for confirmation before inst
 
 ## Additional Manual Steps
 
-After running the script, consider:
+After running the scripts, consider:
 - Installing recommended GNOME extensions.
 - Setting up rtcwake scripts if supported.
 - Enabling RDP if needed.

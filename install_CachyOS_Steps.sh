@@ -152,6 +152,7 @@ if ask_yes_no "Install Homebrew and OneDrive CLI?"; then
     print_status "Installing OneDrive CLI..."
     brew install onedrive-cli
     brew services start onedrive-cli
+    brew install Valkyrie00/homebrew-bbrew/bbrew 
     
     if ask_yes_no "Start OneDrive sync now?"; then
         onedrive --force --skip-dot-files --skip-dir venv --sync

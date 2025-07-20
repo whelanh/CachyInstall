@@ -100,7 +100,7 @@ fi
 print_section "Flatpak Applications"
 if ask_yes_no "Install Flatpak applications?"; then
     print_status "Installing Flatpak applications..."
-    flatpak install -y be.alexandervanhee.gradia com.github.xournalpp.xournalpp org.kde.kmymoney com.jeffser.Alpaca dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager
+    flatpak install -y be.alexandervanhee.gradia com.github.xournalpp.xournalpp org.kde.kmymoney dev.zed.Zed-Preview io.github.benini.scid io.github.dvlv.boxbuddyrs com.github.tchx84.Flatseal com.mattjakeman.ExtensionManager
     print_status "Flatpak applications installed"
 fi
 

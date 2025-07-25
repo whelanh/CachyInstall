@@ -34,10 +34,12 @@ rclone
 r-rjava
 rstudio-desktop-bin
 rclone
+selawik
 sqlitebrowser
 tailscale
 topgrade
 ttf-meslo-nerd
+ttf-ms-fonts
 virt-manager
 virt-viewer
 visual-studio-code-bin

@@ -263,6 +263,9 @@ echo "3. Consider enabling RDP if needed"
 echo ""
 echo "4. Reboot your system if you installed AppArmor"
 echo ""
-echo "5. For WOL, make sure sudo ethtool -s <interface_name> wol g
+echo "5. For WOL, make sure sudo ethtool -s <interface_name> wol g"
+echo ""
+echo "6. For font config, see https://archsetup.blogspot.com/2025/07/microsoft-fonts-on-arch.html"
+echo ""
 
 print_status "All done! Enjoy your CachyOS setup!"

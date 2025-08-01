@@ -18,6 +18,7 @@ gnome-tweaks
 htop
 lftp
 micro
+pget
 pkgstats
 power-profiles-daemon
 python-colorama

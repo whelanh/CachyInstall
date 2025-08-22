@@ -45,4 +45,5 @@ ttf-ms-fonts
 virt-manager
 virt-viewer
 visual-studio-code-bin
+whatsapp-for-linux
 

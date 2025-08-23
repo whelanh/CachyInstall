@@ -269,5 +269,7 @@ echo "5. For WOL, make sure sudo ethtool -s <interface_name> wol g"
 echo ""
 echo "6. For font config, see https://archsetup.blogspot.com/2025/07/microsoft-fonts-on-arch.html"
 echo ""
+echo "For powerlevel10k prompt in zsh: https://claude.ai/share/bdc24e7f-86b7-4bca-86ec-033b74357231"
+echo ""
 
 print_status "All done! Enjoy your CachyOS setup!"

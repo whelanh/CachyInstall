@@ -111,7 +111,6 @@ if ask_yes_no "Install Flatpak applications?"; then
         com.github.tchx84.Flatseal \
         com.mattjakeman.ExtensionManager \
         com.discordapp.Discord \
-        com.visualstudio.code \
         com.google.ChromeDev 
     print_status "Flatpak applications installed"
 fi

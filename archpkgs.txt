@@ -15,6 +15,7 @@ gnome-shell-extension-forge
 gnome-shell-extension-logo-menu 
 gnome-tweaks
 htop
+jdk-openjdk
 lftp
 micro
 pget

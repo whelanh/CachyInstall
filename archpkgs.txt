@@ -6,7 +6,6 @@ eza
 fastfetch
 fuse2
 gcc-fortran
-github-desktop-bin
 gnome-weather
 gnome-clocks
 gnome-shell-extension-appindicator
@@ -33,7 +32,6 @@ python-suds
 python-svglib
 r
 rclone
-r-rjava
 rstudio-desktop-bin
 rclone
 selawik
@@ -44,6 +42,4 @@ ttf-meslo-nerd
 ttf-ms-fonts
 virt-manager
 virt-viewer
-visual-studio-code-bin
-whatsapp-for-linux
 

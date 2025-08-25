@@ -42,4 +42,5 @@ ttf-meslo-nerd
 ttf-ms-fonts
 virt-manager
 virt-viewer
+visual-studio-code-bin
 

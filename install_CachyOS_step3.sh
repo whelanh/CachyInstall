@@ -271,7 +271,7 @@ echo "6. For font config, see https://archsetup.blogspot.com/2025/07/microsoft-f
 echo ""
 echo "7. For powerlevel10k prompt in zsh: https://claude.ai/share/bdc24e7f-86b7-4bca-86ec-033b74357231"
 echo ""
-echo "8. After installing Java, you need to ensure R is aware of its location and configuration. Run the 'R CMD javareconf' command in your terminal"
+echo "8. After installing Java, you need to ensure R is aware of its location and configuration. Run the 'sudo R CMD javareconf' command in your terminal"
 echo "  This command detects your Java setup and updates R's configuration accordingly. Install rJava in R: install.packages('rJava') "
 
 print_status "All done! Enjoy your CachyOS setup!"

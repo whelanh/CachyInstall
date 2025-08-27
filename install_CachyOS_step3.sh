@@ -274,7 +274,8 @@ echo ""
 echo "8. After installing Java, you need to ensure R is aware of its location and configuration. Run the 'sudo R CMD javareconf' command in your terminal"
 echo "  This command detects your Java setup and updates R's configuration accordingly. Install rJava in R: install.packages('rJava') "
 echo ""
-echo "If you want to avoid the AUR, install visual studio from Flatpak, set up Debian Unstable distro box and:"
+echo "If you want to avoid the AUR, install visual studio from Flatpak, set up Debian Unstable distro box:"
+echo "   distrobox create --name debian-sid --image debian:sid --additional-flags '--security-opt seccomp=unconfined'"
 echo "   sudo apt install r-base r-base-dev libnspr4 libnss3-dev libasound2-dev -y  THEN download nightly Rstudio deb image and install"
 
 
